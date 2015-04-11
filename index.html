@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Русское руководство по quakelive</title>
+</head>
+<style>
+@font-face {
+    font-family: 'Radiance';
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance.eot');
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance.eot?#iefix') format('embedded-opentype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.woff') format('woff'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.ttf') format('truetype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.svg#ywftsvg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Radiance-Bold';
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.eot');
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.eot?#iefix') format('embedded-opentype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.woff') format('woff'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.ttf') format('truetype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.svg#ywftsvg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.admin{
+background-image:url(quaketop.jpg);
+background-repeat:no-repeat;
+height: 1000px;
+width: 960px;
+margin-left: auto;
+margin-right: auto;
+line-height:0px 
+font-size: 0px;
+position: relative;
+}
+body{
+background-color:#020000;
+font-family: "Radiance",sans-serif;
+color: #817B77;
+text-shadow: 1px 1px 0px #000;
+}
+#webmintro{
+position: absolute;
+left:50%;
+top: 623px;
+transform: translate(-50%, -50%);
+}
+#webmsecond{
+position: absolute;
+left:50%;
+top: 240px;
+transform: translate(-50%, -50%);
+}
+.intro{
+height: 930px;
+width: 960px;
+position: relative;
+box-sizing: border-box;
+padding: 100px;
+margin-left: auto;
+margin-right: auto;
+background-image:url(intro.jpg);
+background-color:black;
+text-align:left;
+}
+.second{
+height: 1000px;
+width: 960px;
+position: relative;
+box-sizing: border-box;
+padding: 100px;
+padding-top:1px;
+margin-left: auto;
+margin-right: auto;
+background-color:black;
+text-align:left;
+}
+a{ 
+text-decoration: none;
+color:#16a085;
+}
+.names{
+font-family: "Radiance-Bold",sans-serif;
+color: #817B77;
+font-size:30px;
+}
+.bold{
+font-family: "Radiance-Bold",sans-serif;
+color: #817B77;
+}
+	
+
+</style>
+
+<body>
+<div class="admin">
+<video id="webmintro" preload autoplay loop>
+<source src="top.webm" type="video/webm" />
+</div>
+<div class="intro">
+<p align="center">Это руководство по QL является переводом оригинального <a href="http://www.quakelive.com/forum/showthread.php?831-The-Ultimate-Quake-Live-Guide">'The Ultimate Quake Live Guide'</a>,<br>который в свою очередь является адаптацией другого руководства по Q3 27 Октября 2003 года под QL<br>
+<a href="http://www.trickery.net/vb/showthread.php?t=902">'Yakumo's q3 guide for all levels of player (mk II)'</a>.
+<br><br><br>
+
+<video id="webmsecond" preload autoplay loop>
+<source src="second.webm" type="video/webm" />
+
+
+<p><span class="bold">WiFi НЕ предназначен для компьютерных игр в реальном времени.</span><br>
+WiFi обеспечит вам "лаги" ,"спайки" и огромный пинг, что не даст вам нормально играть в Quake.</p>
+<p><span class="bold">Система:</span><br>
+QuakeLive запускается на (хоть и слегка доработанном) движке Q3 1999 года, поэтому поиграть в квейк<br>
+и достичь показателя fps равного 125 смогут многие. Играя в QuakeLive не забудьте выключить пре-рендер<br>
+кадров в настройках своей видеокарты (AMD, Nvidia etc)</p>
+<p><span class="bold">Управление:</span><br>
+Лушчим способом играть в FPS шутеры это использование клавиатуры и мыши,<br>
+Клавиатура для перемещения (например WASD) и мышь для управления камерой, стрельбы, возможно для прыжков.
+ <p><span class="bold">Клавиатура:</span><br>
+Для игры в Quake подойдет любая клавиатура, но рекомедуется играть на<br>
+механической клавиатуре с функцией anti-ghosting. Она позволяет нажимать до 10 клавиш одновременно<br>
+и предотвращает такие моменты, как например: Вы бежите (удерживая клавишку W), прыгаете (нажимая SPACE),
+и например стреляете, нажав SHIFT для стрельбы (если вы его в настройках назначили для стрельбы)<br>
+на клавиатурах без anti-ghosting`а вы возможно не выпустите снаряд, так как у вас зажаты другие клавишы.<br><br>
+Если интересно, <a href="http://geektimes.ru/info/agreement/?back_link=http%3A%2F%2Fgeektimes.ru%2Fpost%2F140454%2F&mobile=no">посмотрите в интернете</a> об 'anti-ghosting' и о механических клавиатурах в общем.</p>
+<p><span class="bold">Мышь:</span><br>
+Для игры в Quake посоветовал бы оптическую мышь.<br>
+Рекомендую данные мыши:<br>
+<ul>
+ <li>Razer Deathadder Black Edition</li>
+ <li>Logitec g9x</li>
+ <li>Steelseries Xai</li>
+ <li>Microsoft Wheel Mouse Optical 1.1a (WMO)</li>
+ <li>Microsoft IntelliMouse Optical 1.1a (IMO)</li>
+ <li>Microsoft IntelliMouse Explorer v3 (IE 3)</li>
+</ul>
+</div>
+<div class="second">
+<p><span class="bold">Коврик для мыши:</span><br>
+Я бы сказал стол не является хорошей поверхность для мыши, а для игр<br>
+так и подавно (особенно для Quake). Хороший коврик в паре с хорошими руками даёт вам<br>
+точность позиционирования курсора, мягкость хода и лёгкость движений.<br>
+<br>
+<span class="bold">С твёрдым покрытием:</span>
+<ul>
+ <li>Steelseries SX - лучший твёрдый коврик который вы можете приобрест. Аллюминиум.</li>
+ <li>Icemat black (steelseries i-2) - один из лучших твёрдых ковриков. Сделан из стекла.</li>
+ <li>Razer Destructor - отличный пластиковый коврик, хватит на 100 000+ фрагов.</li>
+</ul>
+<span class="bold">С мягким покрытием:</span>
+<ul>
+ <li>Razer Goliathus Speed Alpha</li>
+ <li>Steelseries QcK heavy</li>
+ <li>Allsop mousepads</li>
+</ul>
+<span class="bold">Звуки:</span><br>
+Я редко играю со звуками, они чаще всего мешают в FFA,<br>
+Если не услышите противника и он убьёт вас, ваша смерть не будет<Br> ничего стоить так как это FFA.
+Но всё таки стоит иногда включать звуки не на полную громкость, что бы слышать взрывы от ракет, гранат,
+плазмаган и другие оружия, шаги врагов прыжки, бонусы подобранные противником.
+<br>
+<br>
+Если вы реально хотите играть на высшем уровне, вам нужны ОЧЕНЬ хорошие наушники<br>
+с 5.1 или 7.1 звуком для клановых игр. Я не знаю как в QuakeLive но Q3 не поддерживал объёмных звуков.<br>
+Такие наушники будут прекрасны особенно для дуэлей, что бы по шагам противника<br>
+определить насколько далеко от вас он находится или даже <a href="http://www.youtube.com/watch?v=n7n1xxZCyEg">услышать сколько здоровья осталось
+у противника</a>.<br><br>
+Бюджетным вариантом будут наушники <a href="http://www.plantronics.com/uk/category/pc-gaming">Plantronics</a>,<br>
+они отлично выполнены и имеют хороший микрофон.<br> Альтернативой им будут наушники <a href="http://en-uk.sennheiser.com/">Sennheiser</a>
+
+</video>
+</body>
+</html>
