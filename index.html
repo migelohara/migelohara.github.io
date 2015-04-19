@@ -38,7 +38,8 @@ position: relative;
 }
 body{
 background-color:#020000;
-font-family: "Radiance",sans-serif;
+font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+font-size: 13px;
 color: #817B77;
 text-shadow: 1px 1px 0px #000;
 }
@@ -97,7 +98,7 @@ color:#16a085;
 .names{
 font-family: "Radiance-Bold",sans-serif;
 color: #817B77;
-font-size:30px;
+font-size:25px;
 }
 .bold{
 font-family: "Radiance-Bold",sans-serif;
@@ -106,20 +107,24 @@ color: #817B77;
 td, th {
     padding:8px; 
     border: 1px solid  #817B77; 
-	text-align: center;
+	text-align:justify;
    }	
 TABLE {
 	border-collapse: collapse; 
    }
 .code{
-font-family:"Courier New";
-color: #817B77;
-border-radius: 2px 2px 2px 2px;
-border-radius: 2px 2px 2px 2px;
+font-family: Monaco,Consolas,Courier,monospace;
+background: none repeat scroll 0% 0% #0C140C;
+border: 1px solid #4B5F49;
 display: inline-block;
 box-sizing: border-box;
-padding: 5px;
-border: 1px solid #463727;
+padding: 4px;
+margin: 8px 0px;
+font-size: 13px;
+color: #0F0;
+overflow: auto;
+height: auto;
+max-height: 200px;
 }
 </style>
 
@@ -262,7 +267,26 @@ QuakeLive запускается на (хоть и слегка доработа
 <span class="bold">cg_shadows 0</span> - не сильно поможет, но на слабых комьютерах уберёт лаги в замесах<br>
 <span class="bold">r_ignorehwgamma 1</span> - теперь при запуске quake тема windows не смениться с aero на упрощённую<br>
 <span class="bold">r_contrast</span> - работает только если значение r_enablePostProcessing  будет равно 1<br>
-<span class="bold">cl_maxpackets 125</span> - максимальное число пакетов которые вы можете отослать серверу
+<span class="bold">cl_maxpackets 125</span> - максимальное число пакетов которые вы можете отослать серверу<br><br>
+<span class="bold">cg_forceEnemySkin bright<br>
+cg_forceEnemyModel keel<br>
+cg_forceTeamModel visor</span><br>
+Изменяет всем противникам скин на выбранный.<br>
+Что бы вернуть настройки обратно, пропишите<br>
+<span class="bold">clearcvar cg_forceEnemySkin</span><BR><BR>
+<span class="bold">setenemycolour 0xRRGGBBAA*</span> - меняет цвет противников<br>
+<span class="bold">setteamcolor 0xRRGGBBAA</span> - меняет цвет вашей команды (TDM etc)<br>
+<span class="bold">seta cg_enemyHeadColor "0xFF4000ff"</span> Изменяет цвет головы противников<br>
+<span class="bold">seta cg_enemyLowerColor "0x00FF00ff"</span>Изменяет цвет ног противников <br>
+<span class="bold">seta cg_enemyUpperColor "0x5eFF00ff"</span>Изменяет цвет тела противников <br>
+Цвета можно выбрать <a href="http://johndyer.name/lab/colorpicker/">тут</a>, когда выберите цвет, в начале просто добавьте 0x, а в конце FF (например 0x05091FF)
+<br><br>
+
+*(Red, Green, Blue, Alpha)<br><br>
+<span class="bold">color1</span> (0-26) Изменяет цвет луча на вашей рельсе<br>
+<span class="bold">color2</span> (0-26) Изменяет цвет частиц на вашей рельсе<br>
+<span class="bold">cg_forceEnemyWeaponColor 1</span> (0-26) Изменяет цвет рельсы и гранат противников<br>
+<span class="bold">cg_forceTeamWeaponColor 1</span> (0-26) Изменяет цвет рельсы и гранат вашией команды<br>
 </p>
 <p align="center">
 <span class="names">СВОЙ .CFG</span><br></p>
@@ -312,7 +336,7 @@ QuakeLive запускается на (хоть и слегка доработа
         <td>Аббревиатура</td>
         <td>Урон</td>
         <td>УВС</td>
-        <td>УВС (макс.)</td>
+        <td>УВС (макс)</td>
         <td>Перезарядка (мс)</td>
     </tr>
     <tr>
@@ -432,7 +456,7 @@ QuakeLive запускается на (хоть и слегка доработа
         <td>112</td>
         <td>75</td>
     </tr>
-</table>
+</table></p>
 <br>
 <span class="bold">Урон</span> - максимальный урон за выстрел<br>
 <span class="bold">УВС</span>  это (1000/скорость перезарядки)*Урон<br>
@@ -440,6 +464,84 @@ QuakeLive запускается на (хоть и слегка доработа
 можете выпустить 2 ракеты за 1 секунду - одну в 0 мс, другую в 800 мс.
 <br><br>
 <span class="bold">*</span> 80 урона в течении раскрутки, после раскрутки 160.
+<p align="center">
+<span class="names">РЕСПАВН ПРЕДМЕТОВ</span><br></p>
+<p>
+<table>
+    <tr>
+        <td>Итем</td>
+        <td>Спавн (сек)</td>
+        <td>Информация о предмете</td>
+    </tr>
+    <tr>
+        <td>Оружие<br>Патроны</td>
+        <td>5<br>40</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Квад<br>Реген<br>Хаста<br>Костюм</td>
+        <td>120<br>120<br>120<br>120<br></td>
+        <td>Увеличивает урон в 3 раза<br>Увеличивает показатель здоровья до 200 и регенерацию в 1хп/c<br>Увеличивает скорость передвижения и скорость стрельбы<br>
+        Носитель получает 25% сопротивление к урону от лавы, слизи, падения и от сплеша
+        </td>
+    </tr>
+    <tr>
+        <td>Армор (5)<br>Жёлтый<br>Красный<br>HP small<br>HP med<br>HP large<br>Мега<br>Аптечка<br>Телепорт</td>
+        <td>25<br>25<br>25<br>35<br>35<br>35<br>35<br>60<br>60<br></td>
+        <td>Блокирует 66% от всего урона (Максимум 200 армора)<br>Блокирует 66% от всего урона (Максимум 200 армора)<br>Блокирует 66% от всего урона (Максимум 200 армора)<br>
+        Даёт 5 хп (Максимум 200 хп)<br>Даёт 25 хп (Максимум 100 хп)<br>Даёт 50 хп (Максимум 100 хп)<br>Даёт 100 хп (Максимум 200 хп)<br>Лечит игрока до 125 хп<br>Телепортирует вас на спавн</td>
+    </tr>
+    <tr>
+        <td>Даблер<br>Скаут<br><br>Гард<br>Арморреген</td>
+        <td>10<br>10<br><br>10<br>10<br></td>
+        <td>Увеличивает урон на 50%<br>Увеличивает скорость передвижения? скорость атаки, лимит армора 50, убирает звук шагов.<br>Блокирует 50% урона<br>Реген армора до 100</td>
+    </tr>
+</table>
+</p>
+<p align="center">
+<span class="names">СКРИПТИНГ</span><br></p>
+<p>Бывают моменты, когда нужно сменить переменные определённых команд прямо во время игры, но
+так как это занимает много времени, на помощь приходят скрипты и бинды.
+<br><br>
+<span class="bold">bind f4 "toggle r_fastsky"</span> при нажатии f4 будет менять переменную r_fastsky с 0 на 1 и обратно
+<br><br>
+Если у переменной несколько значений ( 0 1 2 3 4 5 etc) то вам нужен скрипт:<br>
+<span class="code">
+seta _xh0 "cg_drawcrosshair 0;set _xhair vstr _xh1" //Ставит значение, далее переходит к другой строке<br>
+seta _xh1 "cg_drawcrosshair 1;set _xhair vstr _xh2" //ditto<br>
+seta _xh2 "cg_drawcrosshair 2;set _xhair vstr _xh3" //ditto<br>
+seta _xh3 "cg_drawcrosshair 3;set _xhair vstr _xh4" //ditto<br>
+seta _xh4 "cg_drawcrosshair 4;set _xhair vstr _xh5" //ditto<br>
+seta _xh5 "cg_drawcrosshair 5;set _xhair vstr _xh0" //Возвращает к первой строке<br><br>
+
+vstr _xh1 //call one of the states to set it as default that will be how game starts, and create your toggle <br> cvar ('_xhair'  in this case) in memory.<br>
+<br>
+bind END "vstr _xhair" //bind a key to the toggle cvar<br>
+</span><br><br>
+Этот скрипт будет менять прицел при каждом нажатии END, в начале с 1 на 2, с 2 на 3 и так далее, после 5 прицела вернётся к 1. Если значения всего два, уберите _xh1, _xh2, xh_3 и _xh4 оставив _xh0 и xh5.
+<br><br>
+<span class="bold">Сенса под каждое оружие</span><br>
+<span class="code">
+seta sensitivity "7"<br>
+bind 1  "weapon 1"<br>
+bind 2  "weapon 2"<br>
+bind 4 "weapon 4"<br>
+bind 5 "weapon 5"<br>
+bind 6 "weapon 6;sensitivity 2"<br>
+</span><br>
+Когда вы будете нажимать кнопку '6', сенса изменится на 2, но не вернётся на 7.<BR>
+Правильный скрипт:<br>
+<span class="code">
+seta sensitivity "4"
+bind 1  "weapon 1;sensitivity 7"<br>
+bind 2  "weapon 2;sensitivity 7"<br>
+bind 3 "weapon 3;sensitivity 7"<br>
+bind 4 "weapon 4;sensitivity 7"<br>
+bind 5 "weapon 5;sensitivity 7"<br>
+bind 6 "weapon 6;sensitivity 2"<br>
+</span>
+
+
 
 
 
