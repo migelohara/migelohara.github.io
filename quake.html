@@ -1,0 +1,574 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Русское руководство по quakelive</title>
+<style>
+@font-face {
+    font-family: 'Radiance';
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance.eot');
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance.eot?#iefix') format('embedded-opentype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.woff') format('woff'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.ttf') format('truetype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance.svg#ywftsvg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Radiance-Bold';
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.eot');
+    src: url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.eot?#iefix') format('embedded-opentype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.woff') format('woff'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.ttf') format('truetype'),
+         url('http://media.steampowered.com/apps/dota2/fonts/radiance-bold.svg#ywftsvg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.admin{
+background-image:url(quaketop.jpg);
+background-repeat:no-repeat;
+height: 1000px;
+width: 960px;
+margin-left: auto;
+margin-right: auto;
+line-height:0px 
+font-size: 0px;
+position: relative;
+}
+body{
+	line-height: 1.4;
+background-color:#020000;
+font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+font-size: 13px;
+color: #817B77;
+
+}
+#webmintro {
+left: 50%;
+position: absolute;
+top: 623px;
+transform: translate(-50%, -50%);
+}
+#webmsecond{
+position: absolute;
+left:50%;
+top: 240px;
+transform: translate(-50%, -50%);
+}
+.intro{
+height: 930px;
+width: 960px;
+position: relative;
+box-sizing: border-box;
+padding: 100px;
+margin-left: auto;
+margin-right: auto;
+background-image:url(intro.jpg);
+background-color:black;
+text-align:left;
+}
+.second{
+height: 855px;
+width: 960px;
+position: relative;
+box-sizing: border-box;
+padding: 100px;
+padding-top:1px;
+margin-left: auto;
+margin-right: auto;
+background-color:black;
+text-align:left;
+}
+.triple{
+height: 1000px;
+width: 960px;
+position: relative;
+box-sizing: border-box;
+padding: 100px;
+padding-top:1px;
+margin-left: auto;
+margin-right: auto;
+background-color:black;
+text-align:left;
+}
+a{ 
+text-decoration: none;
+color:#16a085;
+}
+.names{
+font-family: "Radiance-Bold",sans-serif;
+color: #817B77;
+font-size: 25px;
+}
+.bold{
+font-family: "Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+font-weight:bold;
+color: #817B77;
+}
+td, th {
+    padding:8px; 
+    border: 1px solid  #817B77; 
+	text-align:justify;
+   }	
+TABLE {
+	border-collapse: collapse; 
+   }
+.code{
+		line-height: 1.2;
+font-family: Monaco,Consolas,Courier,monospace;
+background: none repeat scroll 0% 0% #0C140C;
+border: 1px solid #4B5F49;
+display: inline-block;
+box-sizing: border-box;
+padding: 4px;
+margin: 8px 0px;
+font-size: 13px;
+color: #0F0;
+overflow: auto;
+height: auto;
+max-height: 200px;
+}
+.bot{
+font-family:"Courier New";
+color: #817B77;
+width:400px;
+height:300px;
+padding: 5px;
+}
+.tasty{
+color:white;
+}
+</style>
+
+</head>
+
+
+
+<body>
+<a href="https://github.com/migelohara/migelohara.github.io"><br>
+			<img style="position: fixed; top: 0; left: 0; border: 0; box-shadow: none;" src="git.jpg" alt="Fork me on GitHub" />
+</a>
+<div class="admin">
+<video id="webmintro" preload autoplay loop>
+<source src="top.webm" type="video/webm" />
+</video>
+</div>
+<div class="intro">
+<p align="center">Это руководство по QL является переводом оригинального 
+<a href="http://www.quakelive.com/forum/showthread.php?831-The-Ultimate-Quake-Live-Guide">'The Ultimate Quake Live Guide'</a>,<br>который в свою очередь является адаптацией другого руководства по Q3 27 Октября 2003 года под QL<br>
+<a href="http://www.trickery.net/vb/showthread.php?t=902">'Yakumo's q3 guide for all levels of player (mk II)'</a>.
+<br><br><br>
+<span class="names">АППАРАТНОЕ ОБЕСПЕЧЕНИЕ</span>
+<p><span class="bold">WiFi НЕ предназначен для компьютерных игр в реальном времени.</span><br>
+WiFi обеспечит вам "лаги" ,"спайки" и огромный пинг, что не даст вам нормально играть в Quake.</p>
+<p><span class="bold">Система:</span><br>
+QuakeLive запускается на (хоть и слегка доработанном) движке Q3 1999 года, поэтому поиграть в квейк<br>
+и достичь показателя fps равного 125 смогут многие. Играя в QuakeLive не забудьте выключить пре-рендер<br>
+кадров в настройках своей видеокарты (AMD, Nvidia etc)</p>
+<p><span class="bold">Управление:</span><br>
+Лушчим способом играть в FPS шутеры это использование клавиатуры и мыши,<br>
+Клавиатура для перемещения (например WASD) и мышь для управления камерой, стрельбы, возможно для прыжков.
+ <p><span class="bold">Клавиатура:</span><br>
+Для игры в Quake подойдет любая клавиатура, но рекомедуется играть на<br>
+механической клавиатуре с функцией anti-ghosting. Она позволяет нажимать до 10 клавиш одновременно<br>
+и предотвращает такие моменты, как например: Вы бежите (удерживая клавишку W), прыгаете (нажимая SPACE),
+и например стреляете, нажав SHIFT для стрельбы (если вы его в настройках назначили для стрельбы)<br>
+на клавиатурах без anti-ghosting`а вы возможно не выпустите снаряд, так как у вас зажаты другие клавишы.<br><br>
+Если интересно, <a href="http://geektimes.ru/info/agreement/?back_link=http%3A%2F%2Fgeektimes.ru%2Fpost%2F140454%2F&mobile=no">посмотрите в интернете</a> об 'anti-ghosting' и о механических клавиатурах в общем.</p>
+<p><span class="bold">Мышь:</span><br>
+Для игры в Quake посоветовал бы оптическую мышь.<br>
+Рекомендую данные мыши:<br>
+<ul>
+ <li>Razer Deathadder Black Edition</li>
+ <li>Logitec g9x</li>
+ <li>Steelseries Xai</li>
+ <li>Microsoft Wheel Mouse Optical 1.1a (WMO)</li>
+ <li>Microsoft IntelliMouse Optical 1.1a (IMO)</li>
+ <li>Microsoft IntelliMouse Explorer v3 (IE 3)</li>
+</ul>
+
+
+<p><span class="bold">Коврик для мыши:</span><br>
+Я бы сказал стол не является хорошей поверхность для мыши, а для игр<br>
+так и подавно (особенно для Quake). Хороший коврик в паре с хорошими руками даёт вам<br>
+точность позиционирования курсора, мягкость хода и лёгкость движений.<br>
+<br>
+<span class="bold">С твёрдым покрытием:</span>
+<ul>
+ <li>Steelseries SX - лучший твёрдый коврик который вы можете приобрест. Аллюминиум.</li>
+ <li>Icemat black (steelseries i-2) - один из лучших твёрдых ковриков. Сделан из стекла.</li>
+ <li>Razer Destructor - отличный пластиковый коврик, хватит на 100 000+ фрагов.</li>
+</ul>
+<span class="bold">С мягким покрытием:</span>
+<ul>
+ <li>Razer Goliathus Speed Alpha</li>
+ <li>Steelseries QcK heavy</li>
+ <li>Allsop mousepads</li>
+</ul>
+<span class="bold">Звуки:</span><br>
+Я редко играю со звуками, они чаще всего мешают в FFA,<br>
+Если не услышите противника и он убьёт вас, ваша смерть не будет<Br> ничего стоить так как это FFA.
+Но всё таки стоит иногда включать звуки не на полную громкость, что бы слышать взрывы от ракет, гранат,
+плазмаган и другие оружия, шаги врагов прыжки, бонусы подобранные противником.
+<br>
+<br>
+Если вы реально хотите играть на высшем уровне, вам нужны ОЧЕНЬ хорошие наушники<br>
+с 5.1 или 7.1 звуком для клановых игр. Я не знаю как в QuakeLive но Q3 не поддерживал объёмных звуков.<br>
+Такие наушники будут прекрасны особенно для дуэлей, что бы по шагам противника<br>
+определить насколько далеко от вас он находится или даже <a href="http://www.youtube.com/watch?v=n7n1xxZCyEg">услышать сколько здоровья осталось
+у противника</a>.<br><br>
+Бюджетным вариантом будут наушники <a href="http://www.plantronics.com/uk/category/pc-gaming">Plantronics</a>,<br>
+они отлично выполнены и имеют хороший микрофон.<br> Альтернативой им будут наушники <a href="http://en-uk.sennheiser.com/">Sennheiser</a><br>
+<br>
+<p align="center">
+<span class="names">ЗДОРОВЬЕ</span><br>
+<p>Когда люди играют в компьютерные игры, они забывают о правильной осанке<br>
+за столом. Смотреть на монитор надо под 30 градусами ниже от взгляда вперёд.<br>
+И конечно не забывайте моргать во время игры, что бы глаза могли отдохнуть, так как<br>
+играя в Quake люди концентрируются, что задерживает моргание глазами.
+
+<p align="center">
+<span class="names">ТЕРМИНЫ</span><br>
+<ul>
+<li><span class="bold">Гантеля</span> - оружие Gauntlet. Церкулярная пила, одно из стартовых оружий. Для ближнего боя.
+<li><span class="bold">GL</span> - гранатомёт, стреляет <a href="http://nr2xe23nn5zgkltun4.cmle.ru/%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BD_%D0%9E%D1%87%D0%B5%D0%B2%D0%B8%D0%B4%D0%BD%D0%BE%D1%81%D1%82%D1%8C">гранатами</a>, которые взрываются после небольшого промежутка времени, или при попадании по врагу.
+<li><span class="bold">Мапа</span> - Пространство со стенами в которых происходят действия игры.
+<li><span class="bold">Квад</span> - power-up который появляется на арене который увеличивает урон владельца<br>
+по противника в ТРИ раза на 30 секунд.
+<li><span class="bold">ДМ</span> - Deathmatch (В QuakeLive FFA, Free For All) . Режим в котором игроки не делятся на команды, играя каждый сам за себя. Что бы победить нужно набрать фрагов больше чем у других игроков. Так же есть TDM - Team Deathmatch, аналогичный режим, но только с делением игроков на две команды.
+<li><span class="bold">Фраг</span> - очко начисляемом за убийство другого игрока
+<li><span class="bold">Кемпер</span> - игрок, который сидит в укромных местах и ожидающих других игроков, что бы неожиданно убить их.
+<li><span class="bold">РЛ, Рокет</span> - Rocket Launcher. Одно из основных оружий в Quake. При точном попадании в противника наносит 100 урона.
+<li><span class="bold">RJ, Рокетджамп</span> -  особый приём, для выполнения которого игрок должен стрельнуть себе под ноги из ракетницы и при этом
+подпрыгнув. Позволяет забраться на высокодоступные места. Так же используется для быстрого перемещения по карте.
+<li><span class="bold">Шафт</span> - Lightning gun. Оружие выпускающее молнию, которая наносит 20 урона в 0.1 секунду, но нужно умение удерживать прицел на противнике.
+<li><span class="bold">Пинг</span> - термин определяюший время за которе пакет отправиться до клиента и обратно.
+<li><span class="bold">Хитскан</span> - практически все оружия (кроме рокета и гранатомёта) на самом деле не стреляют никакими снарядами и патронами, а лишь имеют анимацию этого самого выстрела. Оружия имеют лишь точку откуда они выстрелили, и куда они попадут.
+<li><span class="bold">PB, Панк</span> - PunkBuster
+</ul></p>
+
+<p align="center">
+<span class="names">КОНСОЛЬ</span><br></p>
+<p>
+Введите<br>
+<span class="bold">com_allowconsole 1</span><br>
+И затем нажмите ENTER, и вам больше никогда не понадобиться нажимать crtl+alt и тильду что бы открыть консоль<br><br>
+<span class="bold">cvarlist</span><br>
+Показывает лист всех переменных, которые можно изменить<br><br>
+<span class="bold">cmdlist</span><br>
+Показывает список всех команд<br><br>
+<span class="bold">bind x "say_team check"</span><br>
+Теперь при нажатии "x" вы будете отправлять в чат "check.<br><br>
+<span class="bold">callvote (опция)</span><br>
+Начинает голосвание, многие из них доступны в меню QuakeLive, но так будет быстре.<br>
+Например callvote map retribution<br><br>
+<span class="bold">quit </span> закрывает QuakeLive<br>
+<span class="bold">ragequit </span> тоже самое, но при выходе напишет "ragequit"<br><br>
+
+<span class="bold">in_mouse 2</span> Режимы ввода мыши. 0 выключена, -1 win32, 1 directInput, 2 raw<br>
+<span class="bold">in_mouseMode</span> Показывает настройку которая используется в данный момет.<br>
+<span class="bold">in_restart</span> Сбрасывает настройки для их смен.<br><br>
+<span class="bold">timenudge</span><br> Экстраполирует движение игрока на стороне клиента.<br><br>
+<span class="bold">com_maxfps</span><br> 125 FPS не будут сильно "давить" на видеокарту, уберёт размытие между кадрами и синхронизиует мышь.<br> Ниже 125 не сильно что-то изменят, но если ваш компьютер
+слаб для QuakeLive, это вам поможет.<br> Некоторые играют на 250 FPS уменьшит потерю пакетов.<br>
+Так же играя на 250 FPS можно заметить баг со звуком,<br> когда шорох от шагов пропадает.<br> Большинство
+всё же предпочитает играть на 125 FPS.<br><br>
+<span class="bold">r_enablePostProcessing 0 </span> - убирает свечение у объектов и коррекцию цвета, может прибавить FPS<br><br>
+<span class="bold">s_mixPreStep "0.05"</span> и <span class="bold">s_mixahead "0.140" </span> - данные команды прибавят огромное количество FPS<br><br>
+<span class="bold">r_ext_compressed_textures 1</span> - так же прибавит FPS на слабых компьютерах<br>
+<span class="bold">cg_shadows 0</span> - не сильно поможет, но на слабых комьютерах уберёт лаги в замесах<br>
+<span class="bold">r_ignorehwgamma 1</span> - теперь при запуске quake тема windows не смениться с aero на упрощённую<br>
+<span class="bold">r_contrast</span> - работает только если значение r_enablePostProcessing  будет равно 1<br>
+<span class="bold">cl_maxpackets 125</span> - максимальное число пакетов которые вы можете отослать серверу<br><br>
+<span class="bold">cg_forceEnemySkin bright<br>
+cg_forceEnemyModel keel<br>
+cg_forceTeamModel visor</span><br>
+Изменяет всем противникам скин на выбранный.<br>
+Что бы вернуть настройки обратно, пропишите<br>
+<span class="bold">clearcvar cg_forceEnemySkin</span><BR><BR>
+<span class="bold">setenemycolour 0xRRGGBBAA*</span> - меняет цвет противников<br>
+<span class="bold">setteamcolor 0xRRGGBBAA</span> - меняет цвет вашей команды (TDM etc)<br>
+<span class="bold">seta cg_enemyHeadColor "0xFF4000ff"</span> Изменяет цвет головы противников<br>
+<span class="bold">seta cg_enemyLowerColor "0x00FF00ff"</span>Изменяет цвет ног противников <br>
+<span class="bold">seta cg_enemyUpperColor "0x5eFF00ff"</span>Изменяет цвет тела противников <br>
+Цвета можно выбрать <a href="http://johndyer.name/lab/colorpicker/">тут</a>, когда выберите цвет, в начале просто добавьте 0x, а в конце FF (например 0x05091FF)
+<br><br>
+
+*(Red, Green, Blue, Alpha)<br><br>
+<span class="bold">color1</span> (0-26) Изменяет цвет луча на вашей рельсе<br>
+<span class="bold">color2</span> (0-26) Изменяет цвет частиц на вашей рельсе<br>
+<span class="bold">cg_forceEnemyWeaponColor 1</span> (0-26) Изменяет цвет рельсы и гранат противников<br>
+<span class="bold">cg_forceTeamWeaponColor 1</span> (0-26) Изменяет цвет рельсы и гранат вашией команды<br>
+</p>
+<p align="center">
+<span class="names">СВОЙ .CFG</span><br></p>
+<p>Все ваши настройки QL храняться в .cfg файле, когда вы запускаете игру, но в папке baseq3 не будет файла с настройками, игра создаст новый. Все настройки вы можете изменить сами с помощью обычного блокнота. Возможно когда вы
+откроете файл с настройками, все переменные будут написаны в одну линию, так что советую текстовый редактор 
+<a href="http://notepad-plus-plus.org/">notepad++</a>, что бы не было таких проблем.<br><br>
+Файл с настройками игры находится в этой папке -<br>
+<div class="code">\Steam\SteamApps\common\Quake Live\SteamID64\baseq3 </div><br><br>
+Если по расположению будет несколько папок с вашим SteamID64, то зайдите на <a href="steamidfinder.com"> сайт</a> который поможет вам узнать свой ID64 для определённого аккаунта. Зайдя на сайт просто вставьте URL на свой профиль steam. Так же, можете просто зайти в QL и прописать /writeconfig testdump.cfg и вы увидите в какой директории находится
+нужный вам файл.<br><br>
+При запуске игра считывает qzconfig.cfg и далее, если есть, autoexec.cfg.<BR>
+Многие игроки создают в папке с файлами настроек два конфига, конфиг типа <span class="bold">username.cfg</span> и второй файл - <span class="bold">autoexec.cfg</span> и в файле autoexec.cfg прописывают exec username.cfg, это загрузит ваш собственный конфиг.<br><br>
+<span class="bold">Exec name.cfg</span> - пропишите данную команду в консоли что бы загрузить конфиг под названием name.cfg.
+<p align="center">
+<span class="names">ЗАПИСЬ ДЕМО</span><br></p>
+<p>Что бы просто записать демо, введите в консоли<br>
+<span class="bold">record</span><br>
+Демо будет записано и сохранено с автоматически сгенерированным названием.<br><br>
+<span class="bold">record mydemoname</span><br>
+Запишет демо под названием 'mydemoname'<BR>
+Все записи хранятся в \demo, эта папка расположена там же где и все ваши конфиги.<br><br>
+<span class="bold">cg_autoaction 0</span><br>
+0 - отменяет автозапись демо<br>
+1 - автоматически заисывает все матчи<br>
+2 - автоматически делает скриншот в конце игры<br>
+3 - записывает демо и делает скриншот в конце<br><br>
+<span class="bold">cl_demoRecordMessage 0</span> убирает надпись 'REC' в углу, во время записи.<br><br>
+<span class="bold">Полезные программы для просмотра демо и не только</span>
+<ul>
+<li><a href="http://www.wolfwhisperer.net/">Wolf Whisper</a></li>
+<li><a href="http://sourceforge.net/projects/qldt/">Quake Live Demo Tools (QLDT)</a></li>
+<li><a href="http://sourceforge.net/projects/extraql/">ExtraQL</a></li>
+</ul>
+</p>
+<p align="center">
+<span class="names">РАНГОВАЯ СИСТЕМА</span><br></p>
+<p>Навык игрока в QL определяется ELO рейтингом. Для каждого сервера высчитаывается средний ранг всех игроков, и в зависимости от
+этого определяется "сложность" сервера, их всего три - сложная для вас, лёгкая или подходящая по ваш рейтинг.
+</p>
+<p align="center">
+<span class="names">ОРУЖИЕ</span><br></p>
+<p>
+<table align="center">
+    <tr>
+        <td>Оружие</td>
+        <td>Номер</td>
+        <td>Аббревиатура</td>
+        <td>Урон</td>
+        <td>УВС</td>
+        <td>УВС (макс)</td>
+        <td>Перезарядка (мс)</td>
+    </tr>
+    <tr>
+        <td>Гантеля</td>
+        <td>1</td>
+        <td>G</td>
+        <td>50</td>
+        <td>125</td>
+        <td>150</td>
+        <td>400</td>
+    </tr>
+    <tr>
+        <td>Бумстик</td>
+        <td>2</td>
+        <td>MG</td>
+        <td>5</td>
+        <td>50</td>
+        <td>50</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Шотган</td>
+        <td>3</td>
+        <td>SG</td>
+        <td>100</td>
+        <td>100</td>
+        <td>100</td>
+        <td>1000</td>
+    </tr>
+    <tr>
+        <td>Гранатомёт</td>
+        <td>4</td>
+        <td>GL</td>
+        <td>100</td>
+        <td>125</td>
+        <td>200</td>
+        <td>800</td>
+    </tr>
+    <tr>
+        <td>Рокет</td>
+        <td>5</td>
+        <td>RL</td>
+        <td>100</td>
+        <td>125</td>
+        <td>200</td>
+        <td>800</td>
+    </tr>
+    <tr>
+        <td>Шафт</td>
+        <td>6</td>
+        <td>LG</td>
+        <td>8</td>
+        <td>120</td>
+        <td>120</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Рельса</td>
+        <td>7</td>
+        <td>RG</td>
+        <td>80</td>
+        <td>53</td>
+        <td>80</td>
+        <td>1500</td>
+    </tr>
+    <tr>
+        <td>Плазма ган</td>
+        <td>8</td>
+        <td>PG</td>
+        <td>20</td>
+        <td>200</td>
+        <td>200</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>БГФ</td>
+        <td>9</td>
+        <td>BFG</td>
+        <td>100</td>
+        <td>500</td>
+        <td>500</td>
+        <td>200</td>
+    </tr>
+    <tr>
+        <td>Гвоздомёт</td>
+        <td>11</td>
+        <td>NG</td>
+        <td>100</td>
+        <td>100</td>
+        <td>100</td>
+        <td>1000</td>
+    </tr>
+    <tr>
+        <td>Мины</td>
+        <td>12</td>
+        <td>PG</td>
+        <td>100</td>
+        <td>125</td>
+        <td>200</td>
+        <td>800</td>
+    </tr>
+    <tr>
+        <td>Чайник</td>
+        <td>13</td>
+        <td>CG</td>
+        <td>8</td>
+        <td>80-160<span class="bold">*</span></td>
+        <td>80-160<span class="bold">*</span></td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Пукалка</td>
+        <td>14</td>
+        <td>HMG</td>
+        <td>8</td>
+        <td>104</td>
+        <td>112</td>
+        <td>75</td>
+    </tr>
+</table></p>
+<br>
+<span class="bold">Урон</span> - максимальный урон за выстрел<br>
+<span class="bold">УВС</span>  это (1000/скорость перезарядки)*Урон<br>
+<span class="bold">УВС (макс.)</span> - урон который пройдёт по противнику со 100% точностью выстрела не больше чем за 1 секунду, например вы
+можете выпустить 2 ракеты за 1 секунду - одну в 0 мс, другую в 800 мс.
+<br><br>
+<span class="bold">*</span> 80 урона в течении раскрутки, после раскрутки 160.
+<p align="center">
+<span class="names">РЕСПАВН ПРЕДМЕТОВ</span><br></p>
+<p>
+<table>
+    <tr>
+        <td>Итем</td>
+        <td>Спавн (сек)</td>
+        <td>Информация о предмете</td>
+    </tr>
+    <tr>
+        <td>Оружие<br>Патроны</td>
+        <td>5<br>40</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>Квад<br>Реген<br>Хаста<br>Костюм</td>
+        <td>120<br>120<br>120<br>120<br></td>
+        <td>Увеличивает урон в 3 раза<br>Увеличивает показатель здоровья до 200 и регенерацию в 1хп/c<br>Увеличивает скорость передвижения и скорость стрельбы<br>
+        Носитель получает 25% сопротивление к урону от лавы, слизи, падения и от сплеша
+        </td>
+    </tr>
+    <tr>
+        <td>Армор (5)<br>Жёлтый<br>Красный<br>HP small<br>HP med<br>HP large<br>Мега<br>Аптечка<br>Телепорт</td>
+        <td>25<br>25<br>25<br>35<br>35<br>35<br>35<br>60<br>60<br></td>
+        <td>Блокирует 66% от всего урона (Максимум 200 армора)<br>Блокирует 66% от всего урона (Максимум 200 армора)<br>Блокирует 66% от всего урона (Максимум 200 армора)<br>
+        Даёт 5 хп (Максимум 200 хп)<br>Даёт 25 хп (Максимум 100 хп)<br>Даёт 50 хп (Максимум 100 хп)<br>Даёт 100 хп (Максимум 200 хп)<br>Лечит игрока до 125 хп<br>Телепортирует вас на спавн</td>
+    </tr>
+    <tr>
+        <td>Даблер<br>Скаут<br><br>Гард<br>Арморреген</td>
+        <td>10<br>10<br><br>10<br>10<br></td>
+        <td>Увеличивает урон на 50%<br>Увеличивает скорость передвижения? скорость атаки, лимит армора 50, убирает звук шагов.<br>Блокирует 50% урона<br>Реген армора до 100</td>
+    </tr>
+</table>
+</p>
+<p align="center">
+<span class="names">СКРИПТИНГ</span><br></p>
+<p>Бывают моменты, когда нужно сменить переменные определённых команд прямо во время игры, но
+так как это занимает много времени, на помощь приходят скрипты и бинды.
+<br><br>
+<span class="bold">bind f4 "toggle r_fastsky"</span> при нажатии f4 будет менять переменную r_fastsky с 0 на 1 и обратно
+<br><br>
+Если у переменной несколько значений ( 0 1 2 3 4 5 etc) то вам нужен скрипт:<br>
+<span class="code">
+seta _xh0 "cg_drawcrosshair 0;set _xhair vstr _xh1" //Ставит значение, далее переходит к другой строке<br>
+seta _xh1 "cg_drawcrosshair 1;set _xhair vstr _xh2" //ditto<br>
+seta _xh2 "cg_drawcrosshair 2;set _xhair vstr _xh3" //ditto<br>
+seta _xh3 "cg_drawcrosshair 3;set _xhair vstr _xh4" //ditto<br>
+seta _xh4 "cg_drawcrosshair 4;set _xhair vstr _xh5" //ditto<br>
+seta _xh5 "cg_drawcrosshair 5;set _xhair vstr _xh0" //Возвращает к первой строке<br><br>
+
+vstr _xh1 //call one of the states to set it as default that will be how game starts, and create your toggle <br> cvar ('_xhair'  in this case) in memory.<br>
+<br>
+bind END "vstr _xhair" //bind a key to the toggle cvar<br>
+</span><br><br>
+Этот скрипт будет менять прицел при каждом нажатии END, в начале с 1 на 2, с 2 на 3 и так далее, после 5 прицела вернётся к 1. Если значения всего два, уберите _xh1, _xh2, xh_3 и _xh4 оставив _xh0 и xh5.
+<br><br>
+<span class="bold">Сенса под каждое оружие</span><br>
+<span class="code">
+seta sensitivity "7"<br>
+bind 1  "weapon 1"<br>
+bind 2  "weapon 2"<br>
+bind 4 "weapon 4"<br>
+bind 5 "weapon 5"<br>
+bind 6 "weapon 6;sensitivity 2"<br>
+</span><br>
+Когда вы будете нажимать кнопку '6', сенса изменится на 2, но не вернётся на 7.<BR>
+Правильный скрипт:<br>
+<span class="code">
+seta sensitivity "4"
+bind 1  "weapon 1;sensitivity 7"<br>
+bind 2  "weapon 2;sensitivity 7"<br>
+bind 3 "weapon 3;sensitivity 7"<br>
+bind 4 "weapon 4;sensitivity 7"<br>
+bind 5 "weapon 5;sensitivity 7"<br>
+bind 6 "weapon 6;sensitivity 2"<br>
+</span>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
